@@ -45,8 +45,9 @@ public class DaoPedidosImpl implements DaoPedidos {
 
 	@Override
 	public List<Pedido> getListaPedidos() {
-		String jpql="Select p From Pedido p";
-		Query qr = em.createQuery(jpql);
+		//String jpql="Select p From Pedido p";
+		//Query qr = em.createQuery(jpql);
+		Query qr=em.createNamedQuery("Pedido.findAll");
 		List<Pedido> resultList = (List<Pedido>)qr.getResultList();
 		return resultList;
 	}

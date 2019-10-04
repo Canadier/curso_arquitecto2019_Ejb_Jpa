@@ -25,6 +25,7 @@ public class EliminarAction extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int idPedido = Integer.parseInt(request.getParameter("id"));
 		dao.eliminarPedido(idPedido);
+		request.getRequestDispatcher("PedidosAction").include(request, response);
 	}
 
 	

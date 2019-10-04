@@ -32,7 +32,8 @@ public class ModificarAction extends HttpServlet {
 		pedido.setProducto(request.getParameter("producto"));
 		
 		dao.modificarPedido(pedido);
- 		
+		
+		request.getRequestDispatcher("PedidosAction").include(request, response);
 	}
 
 }
