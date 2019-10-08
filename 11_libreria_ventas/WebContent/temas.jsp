@@ -24,7 +24,9 @@
 			</select>
 			<br/><br/>
 			<input type="submit" value="Ver libros"/>
-			
+
+
+			<a href="Controller?op=doVentas">Mis compras</a>			
 		</form>
 
 	
