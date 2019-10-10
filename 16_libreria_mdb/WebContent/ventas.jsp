@@ -25,7 +25,7 @@
 		</table>
 	</c:when>
 	<c:otherwise>
-		<h2>No hay compras para ${sessionScope.cliente.nombre}</h2>
+		<h2>No hay compras para ${sessionScope.cliente.usuario}</h2>
 	</c:otherwise>
 </c:choose>
 <br/><br/>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+	<script type="text/javascript">
+		function sumar(){
+		    var n1,n2;
+		    n1=document.getElementById("caja1").value; //Toma los valores como texto porque el input lo hemos puesto como Text
+		    n2=document.getElementById("caja2").value;
+		    n1=parseInt(n1); //Convierte en números
+		    n2=parseInt(n2);
+			var suma = 0;
+			for (var i = n1; i <= n2; i++) {
+				suma += i;
+			}
+			//console.log(suma); //consola
+			//alert(suma); //cuadro de dialogo
+			
+			var objDiv=document.getElementById("res");
+			objDiv.innerHTML="<h1>"+suma+"</h1>";
+		}
+	</script>
+
+</head>
+<body>
+	
+	<button  onclick="sumar();"> Pulsar </button>
+	
+	caja1:<input type="text" id="caja1"/><br/>
+	caja2:<input type="text" id="caja2"/><br/>
+	
+	<br/><br/>
+	
+	<div id="res">
+	
+	
+	</div>
+	
+</body>
+</html>

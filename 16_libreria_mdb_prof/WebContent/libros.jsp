@@ -5,27 +5,28 @@
 
 <html>
 <head>
-<title>Compras</title>
+<title>libros</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 <body>
- <c:set var="ventas" value="${requestScope.ventas}"/>   
+ <c:set var="libros" value="${requestScope.libros}"/>   
 <c:choose>
-	<c:when test="${!empty ventas}">
+	<c:when test="${!empty libros}">
 
 		<table border="1">
-		    <tr><th>Titulo</th><th>Fecha</th><th>Precio</th></tr>		    	
-		    	<c:forEach var="vt" items="${ventas}">
+		    <tr><th>Titulo</th><th>Autor</th><th>Precio</th><th></th></tr>		    	
+		    	<c:forEach var="lib" items="${libros}">
 		    		<tr>
-		    			<td>${vt.libro.titulo}</td>
-						<td>${vt.fecha}</td>
-						<td>${vt.libro.precio}</td>
+		    			<td>${lib.titulo}</td>
+						<td>${lib.autor}</td>
+						<td>${lib.precio}</td>
+						<td><a href="Controller?op=doComprar&isbn=${lib.isbn}">Comprar</a></td>
 					</tr>		    	
 		    	</c:forEach>
 		</table>
 	</c:when>
 	<c:otherwise>
-		<h2>No hay compras para ${sessionScope.cliente.usuario}</h2>
+		<h2>No hay libros</h2>
 	</c:otherwise>
 </c:choose>
 <br/><br/>

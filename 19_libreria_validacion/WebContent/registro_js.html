@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>registro</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript">
+	function validarCampos(){
+		var usuario=document.getElementById("usuario").value;
+		var password=document.getElementById("password").value;
+		if(usuario==""||password==""){
+			alert("La contraseña y/o el usuario no pueden estar vacíos");
+			return false;
+		}else{
+			return true;
+		}
+	}
+	function validarTelefono(){
+		var telefono=document.getElementById("telefono").value;
+		if(isNaN(telefono)){
+			alert("el teléfono debe ser numérico");
+			return false;
+		}else{
+			return true;
+		}
+	}
+	function validarEmail(){
+		var email=document.getElementById("email").value;
+		if(email.indexOf("@")==-1 ||email.indexOf(".")==-1){
+			alert("email no válido");
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	function validar(){
+		return validarCampos()&&validarTelefono()&&validarEmail();
+	}
+</script>
+
+</head>
+<body>
+
+<form action="Controller?op=doRegistro" onsubmit="return validar();" method="post">
+	
+	Usuario:<input type="text" name="usuario" id="usuario"/>
+	<br/>
+	Password:<input type="password" name="password" id="password"/>
+	<br/>
+	Email:<input type="text" name="email" id="email"/>
+	<br/>
+	Telefono:<input type="text" name="telefono" id="telefono"/>
+	<br/>
+	
+	<input type="submit"  value="Grabar"/>
+	
+	
+</form>
+
+</body>
+</html>
