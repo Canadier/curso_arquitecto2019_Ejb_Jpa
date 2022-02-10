@@ -37,7 +37,7 @@
 	<dependency>
 	    <groupId>org.hibernate</groupId>
 	    <artifactId>hibernate-core</artifactId>
-	    <version>5.4.3.Final</version>
+	    <version>5.4.24.Final</version>
 	<!-- En caso de conficto de librerías, se pueden excluir la importación de librerías de Maven 
 		<scope>provided</scope> 
 			<exclusions> 
